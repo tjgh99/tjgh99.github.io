@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>No Sweat Soles</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="nosweatsoles-favicon.png?v=2">
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <div class="logo" id="logo-link">No Sweat Soles</div>
+            <img src="Screenshot 2025-05-31 084914.png" alt="Shoe Logo" class="brand-logo" />
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="home" class="active">
+            <h1>Welcome to No Sweat Soles</h1>
+            <p>Your one-stop shop for all-natural, all-day shoe deodorizers.</p>
+            <a href="#preorder" class="preorder-btn-link">
+                <button class="preorder-btn">Preorder Now</button>
+            </a>
+        </section>
+        <section id="about">
+            <h2>About Us</h2>
+            <p>No Sweat Soles is dedicated to providing innovative, environmentally friendly solutions for shoe odor problems. Made by a Minnesotan teen entrepreneur who understands the importance of keeping your feet dry and comfortable.</p>
+        </section>
+        <section id="products">
+            <h2>Our Products</h2>
+            <ul>
+                <li>Natural Shoe Deodorizer Spray 
+                    <a href="#preorder" class="preorder-btn-link">
+                        <button class="preorder-btn">Preorder Now</button>
+                    </a>
+                </li>
+                <li>Deodorizing Wipes 
+                    <a href="#preorder" class="preorder-btn-link">
+                        <button class="preorder-btn">Preorder Now</button>
+                    </a>
+                </li>
+            </ul>
+        </section>
+        <section id="preorder">
+            <h2>Raw materials will be ordered once 90 preorders are made</h2>
+            <form id="preorder-form">
+                <label for="name">Full Name*</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email*</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="address">Shipping Address*</label>
+                <input type="text" id="address" name="address" required>
+
+                <label for="product">Product*</label>
+                <select id="product" name="product" required>
+                    <option value="">Select a product</option>
+                    <option value="spray">Natural Shoe Deodorizer Spray</option>
+                    <option value="wipes">Deodorizing Wipes</option>
+                </select>
+
+                <label for="card">Credit Card Number*</label>
+                <input type="text" id="card" name="card" pattern="[0-9]{13,19}" maxlength="19" required placeholder="1234 5678 9012 3456">
+
+                <label for="exp">Expiration Date*</label>
+                <input type="text" id="exp" name="exp" pattern="(0[1-9]|1[0-2])\/([0-9]{2})" maxlength="5" required placeholder="MM/YY">
+
+                <label for="cvc">CVC*</label>
+                <input type="text" id="cvc" name="cvc" pattern="[0-9]{3,4}" maxlength="4" required placeholder="123">
+
+                <button type="submit" class="preorder-btn">Submit Preorder</button>
+            </form>
+        </section>
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Email: info@nosweatsoles.com</p>
+        </section>
+    </main>
+    <script>
+        // Show only the selected section and update active class
+        function showSection(id) {
+            document.querySelectorAll('main section').forEach(sec => {
+                sec.classList.remove('active');
+            });
+            const target = document.getElementById(id);
+            if (target) target.classList.add('active');
+        }
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href.startsWith('#')) {
+                    e.preventDefault();
+                    showSection(href.substring(1));
+                }
+            });
+        });
+        // Make preorder buttons go to preorder section
+        document.querySelectorAll('.preorder-btn-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                showSection('preorder');
+            });
+        });
+        // Make logo clickable to go to home
+        document.getElementById('logo-link').addEventListener('click', function() {
+            showSection('home');
+        });
+        // Optional: Show home section by default on load
+        showSection('home');
+        // Prevent form submission (demo only)
+        document.getElementById('preorder-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your preorder! (Demo only, no payment processed)');
+        });
+    </script>
+</body>
+</html>
