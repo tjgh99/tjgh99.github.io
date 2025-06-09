@@ -19,6 +19,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#products">Products</a></li>
+                <li><a href="#preorder">Preorder</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -27,7 +28,7 @@
         <section id="home" class="active">
             <h1>Welcome to No Sweat Soles</h1>
             <p>Your one-stop shop for all-natural, all-day shoe deodorizers.</p>
-            <a href="#preorder" class="preorder-btn-link">
+            <a href="preorder.html" class="preorder-btn-link">
                 <button class="preorder-btn">Preorder Now</button>
             </a>
         </section>
@@ -39,12 +40,12 @@
             <h2>Our Products</h2>
             <ul>
                 <li>Natural Shoe Deodorizer Spray 
-                    <a href="#preorder" class="preorder-btn-link">
+                    <a href="preorder.html" class="preorder-btn-link">
                         <button class="preorder-btn">Preorder Now</button>
                     </a>
                 </li>
                 <li>Deodorizing Wipes 
-                    <a href="#preorder" class="preorder-btn-link">
+                    <a href="preorder.html" class="preorder-btn-link">
                         <button class="preorder-btn">Preorder Now</button>
                     </a>
                 </li>
@@ -113,24 +114,12 @@
                 }
             });
         });
-        // Make preorder buttons go to preorder section
-        document.querySelectorAll('.preorder-btn-link').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                showSection('preorder');
-            });
-        });
         // Make logo clickable to go to home
         document.getElementById('logo-link').addEventListener('click', function() {
             showSection('home');
         });
         // Optional: Show home section by default on load
         showSection('home');
-        // Prevent form submission (demo only)
-        document.getElementById('preorder-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your preorder! (Demo only, no payment processed)');
-        });
     </script>
 </body>
 </html>
