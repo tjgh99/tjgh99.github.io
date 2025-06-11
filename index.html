@@ -107,6 +107,7 @@
             });
             const target = document.getElementById(id);
             if (target) target.classList.add('active');
+            if (id === 'preorder') updateOrderTotal();
         }
         document.querySelectorAll('nav a').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
@@ -136,6 +137,15 @@
         }
         productSelect.addEventListener('change', updateOrderTotal);
         updateOrderTotal();
+
+        // Fix preorder button links and show order total on section show
+        document.querySelectorAll('.preorder-btn-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                showSection('preorder');
+                updateOrderTotal();
+            });
+        });
     </script>
 </body>
 </html>
