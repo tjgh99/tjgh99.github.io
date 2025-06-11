@@ -39,13 +39,13 @@
         <section id="products">
             <h2>Our Products</h2>
             <ul>
-                <li>Natural Shoe Deodorizer Spray 
-                    <a href="preorder.html" class="preorder-btn-link">
+                <li>Natural Shoe Deodorizer Spray (8 oz) - <span class="product-price">$12.99</span>
+                    <a href="#preorder" class="preorder-btn-link">
                         <button class="preorder-btn">Preorder Now</button>
                     </a>
                 </li>
-                <li>Deodorizing Wipes 
-                    <a href="preorder.html" class="preorder-btn-link">
+                <li>Deodorizing Wipes (20 count) - <span class="product-price">$8.99</span>
+                    <a href="#preorder" class="preorder-btn-link">
                         <button class="preorder-btn">Preorder Now</button>
                     </a>
                 </li>
@@ -75,8 +75,9 @@
                 <label for="product">Product*</label>
                 <select id="product" name="product" required>
                     <option value="">Select a product</option>
-                    <option value="spray">Natural Shoe Deodorizer Spray</option>
-                    <option value="wipes">Deodorizing Wipes</option>
+                    <option value="spray">Natural Shoe Deodorizer Spray ($12.99)</option>
+                    <option value="wipes">Deodorizing Wipes ($8.99)</option>
+                    <option value="both">Both Products ($21.98)</option>
                 </select>
 
                 <label for="card">Credit Card Number*</label>
@@ -87,6 +88,8 @@
 
                 <label for="cvc">CVC*</label>
                 <input type="text" id="cvc" name="cvc" pattern="[0-9]{3,4}" maxlength="4" required placeholder="123">
+
+                <div id="order-total" style="margin-top:1rem;font-weight:bold;text-align:center;">Order Total: $0.00</div>
 
                 <button type="submit" class="preorder-btn">Submit Preorder</button>
             </form>
@@ -120,6 +123,19 @@
         });
         // Optional: Show home section by default on load
         showSection('home');
+
+        // Update order total based on product selection
+        const productSelect = document.getElementById('product');
+        const orderTotalDiv = document.getElementById('order-total');
+        function updateOrderTotal() {
+            let total = 0;
+            if (productSelect.value === 'spray') total = 12.99;
+            else if (productSelect.value === 'wipes') total = 8.99;
+            else if (productSelect.value === 'both') total = 21.98;
+            orderTotalDiv.textContent = 'Order Total: $' + total.toFixed(2);
+        }
+        productSelect.addEventListener('change', updateOrderTotal);
+        updateOrderTotal();
     </script>
 </body>
 </html>
