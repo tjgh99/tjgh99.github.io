@@ -153,3 +153,56 @@ section h1, section h2 {
 #preorder .preorder-btn {
     margin-top: 1rem;
 }
+
+.product-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.product-item {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+    background: #fafbfc;
+    border-radius: 10px;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.04);
+    padding: 1.5rem;
+}
+.product-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+    min-width: 170px;
+}
+.product-image {
+    max-width: 150px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.product-info {
+    flex: 1;
+}
+.product-title {
+    font-weight: bold;
+    font-size: 1.1rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+.product-description {
+    margin-top: 0.2rem;
+    font-size: 1rem;
+}
+@media (max-width: 700px) {
+    .product-item {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .product-main {
+        flex-direction: row;
+        justify-content: flex-start;
+        min-width: 0;
+    }
+}
