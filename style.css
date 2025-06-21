@@ -206,3 +206,23 @@ section h1, section h2 {
         min-width: 0;
     }
 }
+
+.preorder-status-box {
+    background: #232323;
+    color: #fff;
+    border-radius: 10px;
+    padding: 1.5rem 2rem;
+    margin: 2rem 0;
+    font-size: 1.08rem;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+    line-height: 1.7;
+}
+.preorder-status-box strong {
+    font-size: 1.1rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+.preorder-status-box span {
+    color: #ffe066;
+    font-weight: 600;
+}
