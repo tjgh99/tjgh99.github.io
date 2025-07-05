@@ -195,6 +195,18 @@ section h1, section h2 {
     margin-top: 0.2rem;
     font-size: 1rem;
 }
+.product-old-price {
+    color: #888;
+    text-decoration: line-through;
+    font-size: 1.05em;
+    margin-right: 0.5em;
+    font-weight: 400;
+}
+.product-price {
+    color: #111;
+    font-weight: bold;
+    font-size: 1.3em;
+}
 @media (max-width: 700px) {
     .product-item {
         flex-direction: column;
