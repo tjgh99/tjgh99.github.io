@@ -6,6 +6,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Static website for **No Sweat Soles**, a student-run shoe deodorizer business based in Minnesota. No build tools, frameworks, or package managers — just HTML, CSS, and vanilla JS.
 
+## Repository
+
+https://github.com/tjgh99/tjgh99.github.io
+
 ## Previewing the Site
 
 Open `index.html` directly in a browser. No server or build step is required.
@@ -19,10 +23,6 @@ Open `index.html` directly in a browser. No server or build step is required.
 ## Payments
 
 All "Preorder Now" buttons in `index.html` link to a Stripe-hosted payment page. Do not replace this with a custom card form.
-
-## Important: `preorder.html`
-
-This file is an **unused draft** — it is not linked from `index.html`'s navigation. It contains a raw HTML form that collects credit card numbers, expiration dates, and CVCs, which is a PCI DSS violation. The form currently only fires a demo `alert()` and submits nothing. Do not wire this form up to any backend or payment processor; use the Stripe link approach in `index.html` instead.
 
 ## Known HTML Issues
 
