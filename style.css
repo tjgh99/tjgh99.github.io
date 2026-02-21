@@ -229,12 +229,96 @@ section h1, section h2 {
     box-shadow: 0 2px 12px rgba(0,0,0,0.10);
     line-height: 1.7;
 }
-.preorder-status-box strong {
-    font-size: 1.1rem;
+.preorder-status-box > strong {
+    font-size: 1.2rem;
     display: block;
+    margin-bottom: 0.25rem;
+}
+.preorder-status-box p {
+    margin: 0.5rem 0 1.2rem;
+    color: #444;
+}
+
+/* Progress bar */
+.progress-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.4rem;
+}
+.progress-count {
+    font-size: 1rem;
+    color: #222;
+}
+.progress-pct {
+    font-size: 0.95rem;
+    color: #888;
+}
+.progress-bar-track {
+    width: 100%;
+    height: 14px;
+    background: #e9ecef;
+    border-radius: 99px;
+    overflow: hidden;
     margin-bottom: 0.5rem;
 }
-.preorder-status-box span {
-    color: #ffe066;
-    font-weight: 600;
+.progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #0078d7, #00c6ff);
+    border-radius: 99px;
+    transition: width 0.8s ease;
+    min-width: 0;
+}
+.progress-note {
+    font-size: 0.95rem;
+    color: #555;
+    margin: 0.4rem 0 1.5rem;
+}
+
+/* Status detail rows */
+.status-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+.status-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.9rem;
+    background: #f7f9fc;
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+}
+.status-icon {
+    font-size: 1.4rem;
+    line-height: 1;
+    flex-shrink: 0;
+}
+.status-item div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+}
+.status-item strong {
+    font-size: 0.95rem;
+    color: #111;
+}
+.status-item span {
+    font-size: 0.9rem;
+    color: #555;
+    font-weight: 400;
+}
+
+/* CTA inside status box */
+.status-cta {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+}
+.status-cta .preorder-btn {
+    margin: 0;
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1.05rem;
 }
